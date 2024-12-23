@@ -1,0 +1,6 @@
+[Unit]
+Description=Reload PIA WireGuard VPN Service
+
+[Service]
+Type=oneshot
+ExecStart=/opt/pia-wg/pia-wg.sh -r

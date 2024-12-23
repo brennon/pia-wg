@@ -4,11 +4,10 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/pia-wg/pia-wg.sh -f
-ExecReload=/root/pia-wg/pia-wg.sh -r
-ExecStop=/root/pia-wg/pia-wg.sh -s
+ExecStart=/opt/pia-wg/pia-wg.sh -f
+ExecReload=/opt/pia-wg/pia-wg.sh -r
 Restart=always
-RestartSec=3
+RestartSec=5
 StartLimitInterval=60
 StartLimitBurst=3
 
