@@ -1,16 +1,16 @@
 [Unit]
 Description=PIA WireGuard VPN Service
-After=network.target                    # Ensure the network is up before starting this service
+After=network.target
 
 [Service]
 Type=simple
-ExecStart=/root/pia-wg/pia-wg.sh -f     # Command to start the VPN service with fast reconnect
-ExecReload=/root/pia-wg/pia-wg.sh -r    # Command to reload the VPN service (reconnect or hop to a new server)
-ExecStop=/root/pia-wg/pia-wg.sh -s      # Command to stop the VPN service
-Restart=always                          # Always restart the service if it stops
-RestartSec=3                            # Delay of 3 seconds before restarting the service
-StartLimitInterval=60                   # 60-second window for the start limit
-StartLimitBurst=3                       # Allow up to 3 restarts within the 60-second window before considering the service to be in a failure state
+ExecStart=/root/pia-wg/pia-wg.sh -f
+ExecReload=/root/pia-wg/pia-wg.sh -r
+ExecStop=/root/pia-wg/pia-wg.sh -s
+Restart=always
+RestartSec=3
+StartLimitInterval=60
+StartLimitBurst=3
 
 [Install]
-WantedBy=multi-user.target              # Start this service in the multi-user target (standard system runlevel for non-graphical multi-user systems)
+WantedBy=multi-user.target
